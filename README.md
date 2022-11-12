@@ -1,2 +1,2 @@
 # CuisineAppv2.0
-Cuisine App(Jpa)
+Cuisine App upgrade
