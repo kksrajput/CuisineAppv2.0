@@ -20,16 +20,16 @@ public class CuisineAppApplication {
 	    return new CommandLineRunner() {
 	      @Override
 	      public void run(String... args) throws Exception {
-	        repo.save(new Ingredient("FLTO", "Flour Tortilla", Type.WRAP));
-	        repo.save(new Ingredient("COTO", "Corn Tortilla", Type.WRAP));
-	        repo.save(new Ingredient("BRD", "Bread", Type.PROTEIN));
-	        repo.save(new Ingredient("CARN", "Carnitas", Type.PROTEIN));
-	        repo.save(new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES));
-	        repo.save(new Ingredient("LETC", "Lettuce", Type.VEGGIES));
-	        repo.save(new Ingredient("CHED", "Cheddar", Type.CHEESE));
-	        repo.save(new Ingredient("JACK", "Monterrey Jack", Type.CHEESE));
-	        repo.save(new Ingredient("SLSA", "Salsa", Type.SAUCE));
-	        repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
+	        repo.save(new Ingredient("NAN", "NAN", Type.BREAD));
+	        repo.save(new Ingredient("CHAPATTI", "CHAPPATI", Type.BREAD));
+	        repo.save(new Ingredient("PANEER", "PANEER TIKKA", Type.VEGGIES));
+//	        repo.save(new Ingredient("PANEER", "PANNER BUTTER MASALA", Type.VEGGIES));
+	        repo.save(new Ingredient("SMB", "SAMBHAR", Type.VEGGIES));
+	        repo.save(new Ingredient("RASHM", "RASHM", Type.VEGGIES));
+	        repo.save(new Ingredient("DRINK", "WATER", Type.DRINK));
+	        repo.save(new Ingredient("BRF", "BARFI", Type.SWEET));
+//	        repo.save(new Ingredient("CHUTNEY", "PUDINA", Type.CHUTNEY));
+	        repo.save(new Ingredient("CHUTNEY", "AANVLA", Type.CHUTNEY));
 	      }
 	    };
 	  }
