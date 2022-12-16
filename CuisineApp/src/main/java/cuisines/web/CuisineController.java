@@ -25,12 +25,12 @@ import cuisines.data.IngredientRepository;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("cuisineOrder")
-public class DesignTacoController {
+public class CuisineController {
 
   private final IngredientRepository ingredientRepo;
 
   @Autowired
-  public DesignTacoController(
+  public CuisineController(
         IngredientRepository ingredientRepo) {
     this.ingredientRepo = ingredientRepo;
   }
