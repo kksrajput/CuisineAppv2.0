@@ -18,7 +18,7 @@
 
     <div class="grid">
       <div class="ingredient-group" id="breads">
-      <h3>Designate your wrap:</h3>
+      <h3>Pick your Bread:</h3>
       <div th:each="ingredient : ${bread}">
         <input th:field="*{ingredients}" type="checkbox"
                th:value="${ingredient.id}"/>
@@ -27,7 +27,7 @@
       </div>
 
 	  <div class="ingredient-group" id="sweets">
-      <h3>Pick your protein:</h3>
+      <h3>Pick your Sweets:</h3>
       <div th:each="ingredient : ${sweet}">
         <input th:field="*{ingredients}" type="checkbox"
                th:value="${ingredient.id}"/>
@@ -36,7 +36,7 @@
       </div>
 
 	  <div class="ingredient-group" id="drinks">
-      <h3>Choose your cheese:</h3>
+      <h3>Choose your Drink:</h3>
       <div th:each="ingredient : ${drink}">
         <input th:field="*{ingredients}" type="checkbox"
                th:value="${ingredient.id}"/>
@@ -45,7 +45,7 @@
       </div>
 
 	  <div class="ingredient-group" id="veggies">
-      <h3>Determine your veggies:</h3>
+      <h3>Determine your Veggies:</h3>
       <div th:each="ingredient : ${veggies}">
         <input th:field="*{ingredients}" type="checkbox"
                th:value="${ingredient.id}"/>
@@ -54,7 +54,7 @@
       </div>
 
 	  <div class="ingredient-group" id="chutney">
-      <h3>Select your sauce:</h3>
+      <h3>Select your Chutney:</h3>
       <div th:each="ingredient : ${chutney}">
         <input th:field="*{ingredients}" type="checkbox"
                th:value="${ingredient.id}"/>

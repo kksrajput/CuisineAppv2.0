@@ -28,8 +28,9 @@ public class CuisineAppApplication {
 	        repo.save(new Ingredient("RASHM", "RASHM", Type.VEGGIES));
 	        repo.save(new Ingredient("DRINK", "WATER", Type.DRINK));
 	        repo.save(new Ingredient("BRF", "BARFI", Type.SWEET));
-//	        repo.save(new Ingredient("CHUTNEY", "PUDINA", Type.CHUTNEY));
-	        repo.save(new Ingredient("CHUTNEY", "AANVLA", Type.CHUTNEY));
+	        repo.save(new Ingredient("RSG", "RASOGULLA", Type.SWEET));
+	        repo.save(new Ingredient("PUDINACHUTNEY", "PUDINA CHUTNEY", Type.CHUTNEY));
+	        repo.save(new Ingredient("AANVCHUTNEY", "AANVLA CHUTNEY", Type.CHUTNEY));
 	      }
 	    };
 	  }
