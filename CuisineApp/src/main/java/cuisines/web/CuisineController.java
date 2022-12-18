@@ -63,7 +63,7 @@ public class CuisineController {
   }
 
   @PostMapping
-  public String processTaco(
+  public String processCuisine(
       @Valid Cuisine cuisine, Errors errors,
       @ModelAttribute CuisineOrder cuisineOrder) {
 
