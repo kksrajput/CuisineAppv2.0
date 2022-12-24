@@ -9,12 +9,12 @@
   <body>
 
     <form method="POST" th:action="@{/orders}" th:object="${cuisineOrder}">
-      <h1>Order your taco creations!</h1>
+      <h1>Order your cuisine creations!</h1>
 
-      <img th:src="@{/images/TacoCloud.png}"/>
+      <img th:src="@{/images/a.png}"/>
 
       <h3>Your tacos in this order:</h3>
-      <a th:href="@{/design}" id="another">Design another taco</a><br/>
+      <a th:href="@{/design}" id="another">Design another Cuisine</a><br/>
       <ul>
         <li th:each="cu : ${cuisineOrder.cuisines}"><span th:text="${cu.name}">taco name</span></li>
       </ul>
@@ -25,7 +25,7 @@
         </span>
       </div>
 
-      <h3>Deliver my taco masterpieces to...</h3>
+      <h3>Deliver my Cuisine masterpieces to...</h3>
       <label for="deliveryName">Name: </label>
       <input type="text" th:field="*{deliveryName}"/>
       <span class="validationError"
