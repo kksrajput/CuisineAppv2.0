@@ -1,5 +1,6 @@
 package cuisines.web;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,22 +19,34 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import cuisines.Ingredient;
 import cuisines.Ingredient.Type;
+import cuisines.User;
 import cuisines.CuisineOrder;
 import cuisines.Cuisine;
+import cuisines.data.CuisineRepository;
 import cuisines.data.IngredientRepository;
+import cuisines.data.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("cuisineOrder")
+@Slf4j
 public class CuisineController {
 
   private final IngredientRepository ingredientRepo;
+  
+  private CuisineRepository cuisineRepo;
+  
+  private UserRepository userRepo;
 
   @Autowired
   public CuisineController(
-        IngredientRepository ingredientRepo) {
+        IngredientRepository ingredientRepo,CuisineRepository cuisineRepo,UserRepository userRepo) {
     this.ingredientRepo = ingredientRepo;
+    this.cuisineRepo = cuisineRepo;
+    this.userRepo = userRepo;
   }
+  
 
   @ModelAttribute
   public void addIngredientsToModel(Model model) {
@@ -56,6 +69,13 @@ public class CuisineController {
   public Cuisine cuisine() {
     return new Cuisine();
   }
+  
+  @ModelAttribute(name = "user")
+  public User user(Principal principal) {
+	  String username = principal.getName();
+	  User user = userRepo.findByUsername(username);
+	  return user;
+  }
 
   @GetMapping
   public String showDesignForm() {
@@ -66,11 +86,13 @@ public class CuisineController {
   public String processCuisine(
       @Valid Cuisine cuisine, Errors errors,
       @ModelAttribute CuisineOrder cuisineOrder) {
-
+	
+	log.info("Saving Cuisine");  
+	  
     if (errors.hasErrors()) {
       return "design";
     }
-
+    Cuisine saved = cuisineRepo.save(cuisine);
     cuisineOrder.addCuisine(cuisine);
 
     return "redirect:/orders/current";

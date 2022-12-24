@@ -9,11 +9,7 @@
   <body>
     <h1>Design your Cuisine!</h1>
     <img th:src="@{/images/TacoCloud.png}"/>
- 	
- 	<form method="POST" th:action="@{/logout}" id="logoutForm">
-      <input type="submit" value="Logout"/>
-    </form>
-    
+
     <form method="POST" th:object="${cuisine}">
 
     <span class="validationError"
