@@ -2,9 +2,9 @@ package cuisines.data;
 
 import org.springframework.data.repository.CrudRepository;
 
-import cuisines.User;
+import cuisines.Customer;
 
-public interface UserRepository extends CrudRepository<User, Long>{
+public interface UserRepository extends CrudRepository<Customer, Long>{
 	
-	User findByUsername(String username);
+	Customer findByUsername(String username);
 }

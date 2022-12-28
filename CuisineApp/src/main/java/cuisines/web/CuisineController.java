@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import cuisines.Ingredient;
 import cuisines.Ingredient.Type;
-import cuisines.User;
+import cuisines.Customer;
 import cuisines.CuisineOrder;
 import cuisines.Cuisine;
 import cuisines.data.CuisineRepository;
@@ -71,9 +71,9 @@ public class CuisineController {
   }
   
   @ModelAttribute(name = "user")
-  public User user(Principal principal) {
+  public Customer user(Principal principal) {
 	  String username = principal.getName();
-	  User user = userRepo.findByUsername(username);
+	  Customer user = userRepo.findByUsername(username);
 	  return user;
   }
 

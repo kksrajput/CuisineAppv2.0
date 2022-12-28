@@ -2,7 +2,7 @@ package cuisines.security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import cuisines.User;
+import cuisines.Customer;
 import lombok.Data;
 
 @Data
@@ -17,8 +17,8 @@ public class RegistrationForm {
 	private String zip;
 	private String phone;
 	
-	public User toUser(PasswordEncoder passwordEncoder) {
-		return new User(
+	public Customer toUser(PasswordEncoder passwordEncoder) {
+		return new Customer(
 				username, passwordEncoder.encode(password),
 				fullname, street, city, state, zip, phone
 				);

@@ -55,7 +55,7 @@ public class CuisineOrder implements Serializable {
   @Digits(integer=3, fraction=0, message="Invalid CVV")
   private String ccCVV;
 
-  @OneToMany(cascade = CascadeType.ALL)
+  @OneToMany(cascade = CascadeType.MERGE)
   private List<Cuisine> cuisines = new ArrayList<>();
 
   public void addCuisine(Cuisine cuisine) {
